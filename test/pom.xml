@@ -26,7 +26,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>repo.internal</id>
@@ -40,6 +40,14 @@
 		</snapshotRepository>
 	</distributionManagement>
 
+	<profiles>
+		<profile>
+			<id>akuntamukkala</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
 	<build>
 		<plugins>
 			<plugin>
