@@ -31,12 +31,12 @@
 		<repository>
 			<id>akuntamukkala-release</id>
 			<name>Internal Release Repository</name>
-			<url>https://repository-akuntamukkala.forge.cloudbees.com/release</url>
+			<url>dav:https://repository-akuntamukkala.forge.cloudbees.com/release</url>
 		</repository>
 		<snapshotRepository>
 			<id>akuntamukkala-snapshot</id>
 			<name>Internal Snapshot Repository</name>
-			<url>https://repository-akuntamukkala.forge.cloudbees.com/snapshot</url>
+			<url>dav:https://repository-akuntamukkala.forge.cloudbees.com/snapshot</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -49,6 +49,15 @@
 		</profile>
 	</profiles>
 	<build>
+		<extensions>
+			<!-- Extension required to deploy a snapshot or a release to the CloudBees 
+				remote maven repository using Webdav -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav</artifactId>
+				<version>1.0-beta-2</version>
+			</extension>
+		</extensions>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
