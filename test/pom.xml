@@ -26,6 +26,20 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<distributionManagement>
+		<repository>
+			<id>repo.internal</id>
+			<name>Internal Release Repository</name>
+			<url>https://repository-akuntamukkala.forge.cloudbees.com/release</url>
+		</repository>
+		<snapshotRepository>
+			<id>repo.snapshots</id>
+			<name>Internal Snapshot Repository</name>
+			<url>https://repository-akuntamukkala.forge.cloudbees.com/snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
